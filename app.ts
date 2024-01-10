@@ -1,6 +1,6 @@
 
 /*
- *
+ * @module dallmo-util-math
  */
 
 //////////////////////////////////////////////////////////////
@@ -9,12 +9,14 @@
  * @returns {string}
  */
 function test(): string{
-  console.log("from dallmo-math-array, alongside ok string in return to assert.");
+  console.log("math ok");
   return "ok";
-}//
+}// 
 //////////////////////////////////////////////////////////////
 export {
 
   test,
 
 }; // export
+
+
