@@ -8,10 +8,10 @@
 // for testing
 export {
 
-  assertEquals
+  assert,
+  assertEquals,
+  assertThrows
 
 } from "https://deno.land/std/assert/mod.ts";
 ////////////////////////////////////////////////////////////////////////////////
-
-
 
