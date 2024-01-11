@@ -15,5 +15,5 @@ export {
 } from "https://deno.land/std/assert/mod.ts";
 ////////////////////////////////////////////////////////////////////////////////
 // the published deno module deps
-export * as dallmo_util_array from "https://deno.land/x/dallmo_util_array@v1.0.5/mod.ts";
+export * as dallmo_util_array from "https://deno.land/x/dallmo_util_array/mod.ts";
 
