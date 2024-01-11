@@ -1,7 +1,7 @@
 # overview
 a collection of math util under dallmo-util, published as deno module.
 
-# installation
+# usage
 ```
 import * as math_util from "https://deno.land/x/dallmo_util_math/std/mod.ts";
 ```
