@@ -9,20 +9,15 @@ import {
   dallmo_util_array,
 
 } from "../deps.ts";
-//////////////////////////////////////////////////////////////
-// the module to be tested
-import {
 
-  test,
-  add_leading_zero,
-  random_integer,
-  random_sections,
+// the methods of this module to be tested
+import * as dallmo_util_math from "../mod.ts";
 
-} from "../mod.ts";
+
 //////////////////////////////////////////////////////////////
 Deno.test( "test reaching dallmo-util-math", () => {
 
-  assertEquals( test(), "ok");
+  assertEquals( dallmo_util_math.test(), "ok");
 
 }); // Deno.test
 //////////////////////////////////////////////////////////////
@@ -32,10 +27,10 @@ Deno.test( "test add_leading_zero", () => {
   let output_length: number = 5;
   
   // case 1 when length greater than the number of char of input_num
-  assertEquals( add_leading_zero( input_num, output_length ), "00123" );
+  assertEquals( dallmo_util_math.add_leading_zero( input_num, output_length ), "00123" );
 
   output_length = 2;
-  assertEquals( add_leading_zero( input_num, output_length ), "123" );
+  assertEquals( dallmo_util_math.add_leading_zero( input_num, output_length ), "123" );
 
 }); // Deno test
 //////////////////////////////////////////////////////////////
@@ -50,7 +45,7 @@ Deno.test( "test random_integer", async (t) => {
   // case 1 : min and max are different numbers in correct order
   await t.step("step : min and max are different numbers in correct order", async () => {
 
-    result = random_integer( min, max );
+    result = dallmo_util_math.random_integer( min, max );
     expression = ( ( result >= min ) && ( result <= max ) );
     assert( expression );
 
@@ -59,7 +54,7 @@ Deno.test( "test random_integer", async (t) => {
   await t.step("step : min and max are different numbers, in wrong order", async () => {
 
     // when min and max has wrong order
-    result = random_integer( max, min );
+    result = dallmo_util_math.random_integer( max, min );
     expression = ( ( result >= min ) && ( result <= max ) );
     assert( expression );
 
@@ -68,7 +63,7 @@ Deno.test( "test random_integer", async (t) => {
   await t.step("step : min and max are the same", async () => {
 
     // when min and max are equal
-    result = random_integer( min, min );
+    result = dallmo_util_math.random_integer( min, min );
     assertEquals( result, min );
 
   }); // step
@@ -86,7 +81,7 @@ Deno.test("test random_sections", async (t) => {
   // case 1 : 
   await t.step("step : without config_obj", async () => {
 
-    result_1 = random_sections( input_number );
+    result_1 = dallmo_util_math.random_sections( input_number );
     result_2 = dallmo_util_array.add_all( result_1 );
    
     console.log("result array from random_sections : ", result_1 );
@@ -110,7 +105,7 @@ Deno.test("test random_sections", async (t) => {
       max: max,
     }; // config_obj
 
-    result_1 = random_sections( input_number, config_obj );
+    result_1 = dallmo_util_math.random_sections( input_number, config_obj );
     result_2 = dallmo_util_array.add_all( result_1 );
    
     console.log("config_obj : ", config_obj );
