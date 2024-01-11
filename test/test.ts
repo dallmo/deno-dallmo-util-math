@@ -6,6 +6,7 @@ import {
   assert,
   assertEquals,
   assertThrows,
+  dallmo_util_array,
 
 } from "../deps.ts";
 //////////////////////////////////////////////////////////////
@@ -45,7 +46,6 @@ Deno.test( "test random_integer", async (t) => {
   let result: number;
   let expression: boolean;
 
-
   //---------------------------------------------------------------
   // case 1 : min and max are different numbers in correct order
   await t.step("step : min and max are different numbers in correct order", async () => {
@@ -76,6 +76,51 @@ Deno.test( "test random_integer", async (t) => {
 
 }); // Deno test
 //////////////////////////////////////////////////////////////
+Deno.test("test random_sections", async (t) => {
+
+  const input_number: number = 50;
+  let result_1: number[];
+  let result_2: number;
+
+  //---------------------------------------------------------------
+  // case 1 : 
+  await t.step("step : without config_obj", async () => {
+
+    result_1 = random_sections( input_number );
+    result_2 = dallmo_util_array.add_all( result_1 );
+   
+    console.log("result array from random_sections : ", result_1 );
+    assertEquals( input_number, result_2 );
+ 
+  }); // step
+  //.................................................
+  // case 1 : min and max are different numbers in correct order
+  await t.step("step : with config_obj as parameter", async () => {
+
+    const min: number = 3;
+    const max: number = 8;
+
+    interface Conf_obj {
+      min: number;
+      max: number;
+    }; // interface Conf_obj
+
+    const config_obj: Conf_obj = {
+      min: min,
+      max: max,
+    }; // config_obj
+
+    result_1 = random_sections( input_number, config_obj );
+    result_2 = dallmo_util_array.add_all( result_1 );
+   
+    console.log("config_obj : ", config_obj );
+    console.log("result array from random_sections : ", result_1 );
+    assertEquals( input_number, result_2 );
+
+  }); // step
+  //---------------------------------------------------------------
+
+}); // Deno test
 //////////////////////////////////////////////////////////////
 
 
