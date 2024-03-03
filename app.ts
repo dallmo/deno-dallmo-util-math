@@ -4,11 +4,14 @@
  */
 
 //////////////////////////////////////////////////////////////
-/*
+/**
+ * given a number, return a string with leading zero 
+ * in specified output_length by char count 
+ * --------------------------
  * @function add_leading_zero
  * @param {number} num - the input number
  * @param {number} output_length - the total length in char
- * @returns {string} a string with leading zero in specified output_length by char count
+ * @returns {string} 
  */
 function add_leading_zero( input_num: number, output_length: number ): string{
 
@@ -16,11 +19,14 @@ function add_leading_zero( input_num: number, output_length: number ): string{
 
 }; // function add_leading_zero
 //////////////////////////////////////////////////////////////
-/*
+/**
+ * given 2 integers, 
+ * return an random integer in between, inclusive.
+ * ------------------------
  * @function random_integer
- * @params {number} min - the minimum number 
- * @params {number} max - the maximum number
- * @returns {number} return an integer in between min and max, inclusive.
+ * @param {number} min - the minimum number 
+ * @param {number} max - the maximum number
+ * @returns {number}
  */
 function random_integer( min: number, max: number ): number {
   
@@ -34,26 +40,24 @@ function random_integer( min: number, max: number ): number {
 
 }; // function random_integer
 //////////////////////////////////////////////////////////////
-/*
- * @function random_sections
- * @param {number} input_num - the input number
- * @param {Object} option_obj - the optional obj to adjust min and max
- * @returns {array} return a number array
- */
 interface rs_option_obj {
   min: number;
   max: number;
-};
+}; // interface
+/**
+ * given an input number ( input_num ),
+ * and the min and max value of each section,
+ * this function divide the input number into random sections,
+ * with the requirement that the sum of all sections
+ * equal to the input number,
+ * and return the result as an array
+ * -------------------------
+ * @function random_sections
+ * @param {number} input_num - the input number
+ * @param {Object} option_obj - the optional obj to adjust min and max
+ * @returns {number[]} 
+ */
 function random_sections( input_num: number, option_obj?: rs_option_obj ): number[] {
-
-  /**
-   * given an input number ( input_num ),
-   * and the min and max value of each section,
-   * this function divide the input number into random sections,
-   * with the requirement that the sum of all sections
-   * equal to the input number,
-   * and return the result as an array
-   */
 
   const num_min_default: number = 1;
   const num_max_default: number = 5;
@@ -119,9 +123,11 @@ function random_sections( input_num: number, option_obj?: rs_option_obj ): numbe
 
 }; // random_sections
 //////////////////////////////////////////////////////////////
-/*
+/**
+ * test connecting to this child module from parent
+ * --------------
  * @function test
- * @params {undefined} - no inputs required
+ * @param {undefined} - no inputs required
  * @returns {string}
  */
 function test(): string{
@@ -133,10 +139,9 @@ function test(): string{
 export {
 
   test,
+
   add_leading_zero,
   random_integer,
-  random_sections
+  random_sections,
 
 }; // export
-
-

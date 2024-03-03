@@ -5,10 +5,9 @@ import {
 
   assert,
   assertEquals,
-  assertThrows,
   dallmo_util_array,
 
-} from "../deps.ts";
+} from "../etc/deps.ts";
 
 // the methods of this module to be tested
 import * as dallmo_util_math from "../mod.ts";
@@ -117,5 +116,3 @@ Deno.test("test random_sections", async (t) => {
 
 }); // Deno test
 //////////////////////////////////////////////////////////////
-
-
