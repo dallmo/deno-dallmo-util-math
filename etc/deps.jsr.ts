@@ -22,4 +22,4 @@ export {
 ////////////////////////////////////////////////////////////////////////////////
 // the published deno module deps
 // for test cases only
-export * as dallmo_util_array from "jsr:@dallmo/util-array";
+export * as dallmo_util_array from "jsr:@dallmo/util-array@^1.2.0";

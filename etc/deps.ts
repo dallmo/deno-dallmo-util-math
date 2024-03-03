@@ -23,4 +23,4 @@ export {
 ////////////////////////////////////////////////////////////////////////////////
 // the published deno module deps
 // for test cases only
-export * as dallmo_util_array from "https://deno.land/x/dallmo_util_array/mod.ts";
+export * as dallmo_util_array from "https://deno.land/x/dallmo_util_array@v1.2.0/mod.ts";
