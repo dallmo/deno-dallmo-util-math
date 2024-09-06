@@ -11,6 +11,7 @@
 
 - add_leading_zero
 - random_integer
+- random_integer_array
 - random_sections
 
 

@@ -126,6 +126,30 @@ function random_sections( input_num: number, option_obj?: RS_Option_Obj ): numbe
 }; // random_sections
 //////////////////////////////////////////////////////////////
 /**
+ * this function returns a number array
+ * with the given size, and each item a random integer
+ * --------------
+ * @function random_integer_array
+ * @param {number} size - size of array
+ * @param {number} min - min value of each random integer
+ * @param {number} max - max value of each random integer
+ * @returns {number[]}
+ */
+function random_integer_array( size: number, min: number, max: number ): number[]{
+
+  const result_array: number[] = [];
+  let counter: number = 1
+  while( counter <= size ){
+    const curr_rand: number = random_integer( min, max );
+          result_array.push( curr_rand );
+    counter++;
+  }; // while loop
+
+  return result_array;
+
+}// function
+//////////////////////////////////////////////////////////////
+/**
  * test connecting to this child module from parent
  * --------------
  * @function test
@@ -145,6 +169,7 @@ export {
   add_leading_zero,
   random_integer,
   random_sections,
+  random_integer_array,
 
 }; // export
 

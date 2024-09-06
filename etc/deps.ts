@@ -1,11 +1,10 @@
 
 /**
  * --------------------------
- * for deno modules
+ * for jsr modules
  * --------------------------
  * this file will be symlinked / copied as deps.ts when publishing to 
- * deno.land/x ; when this is used for publishing to jsr,
- * it will cause errors.
+ * jsr, which does not allow importing modules from deno.land/x via http.
  * 
  * keep all imports / dependencies here for centralized management
  * all other imports in this module should only point to here
@@ -18,9 +17,9 @@ export {
 
   assert,
   assertEquals,
-
-} from "https://deno.land/std@0.218.2/assert/mod.ts";
+  
+} from "jsr:@std/assert@^1.0.4";
 ////////////////////////////////////////////////////////////////////////////////
 // the published deno module deps
 // for test cases only
-export * as dallmo_util_array from "https://deno.land/x/dallmo_util_array@v1.2.0/mod.ts";
+export * as dallmo_util_array from "jsr:@dallmo/util-array@^1.3.0";

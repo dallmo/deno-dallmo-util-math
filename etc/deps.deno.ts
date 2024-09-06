@@ -19,8 +19,8 @@ export {
   assert,
   assertEquals,
 
-} from "https://deno.land/std@0.218.2/assert/mod.ts";
+} from "https://deno.land/std/assert/mod.ts";
 ////////////////////////////////////////////////////////////////////////////////
 // the published deno module deps
 // for test cases only
-export * as dallmo_util_array from "https://deno.land/x/dallmo_util_array@v1.2.0/mod.ts";
+export * as dallmo_util_array from "https://deno.land/x/dallmo_util_array/mod.ts";
