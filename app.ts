@@ -3,6 +3,12 @@
  * @module dallmo-util-math
  */
 
+import {
+
+  RS_Option_Obj,
+
+} from "./etc/interfaces.ts"; // import interfaces
+
 //////////////////////////////////////////////////////////////
 /**
  * given a number, return a string with leading zero 
@@ -40,10 +46,6 @@ function random_integer( min: number, max: number ): number {
 
 }; // function random_integer
 //////////////////////////////////////////////////////////////
-interface rs_option_obj {
-  min: number;
-  max: number;
-}; // interface
 /**
  * given an input number ( input_num ),
  * and the min and max value of each section,
@@ -57,7 +59,7 @@ interface rs_option_obj {
  * @param {Object} option_obj - the optional obj to adjust min and max
  * @returns {number[]} 
  */
-function random_sections( input_num: number, option_obj?: rs_option_obj ): number[] {
+function random_sections( input_num: number, option_obj?: RS_Option_Obj ): number[] {
 
   const num_min_default: number = 1;
   const num_max_default: number = 5;
@@ -145,3 +147,4 @@ export {
   random_sections,
 
 }; // export
+
