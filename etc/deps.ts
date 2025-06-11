@@ -3,12 +3,10 @@
  * --------------------------
  * for jsr modules
  * --------------------------
- * this file will be symlinked / copied as deps.ts when publishing to 
- * jsr, which does not allow importing modules from deno.land/x via http.
- * 
  * keep all imports / dependencies here for centralized management
  * all other imports in this module should only point to here
  * 
+ * version contraints are required when publishing to jsr
  */
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -18,7 +16,7 @@ export {
   assert,
   assertEquals,
   
-} from "jsr:@std/assert@^1.0.4";
+} from "jsr:@std/assert@^1.0.13";
 ////////////////////////////////////////////////////////////////////////////////
 // the published deno module deps
 // for test cases only

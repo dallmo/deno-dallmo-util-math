@@ -42,7 +42,7 @@ Deno.test( "test random_integer", async (t) => {
 
   //---------------------------------------------------------------
   // case 1 : min and max are different numbers in correct order
-  await t.step("step : min and max are different numbers in correct order", async () => {
+  await t.step("step : min and max are different numbers in correct order",  () => {
 
     result = dallmo_util_math.random_integer( min, max );
     expression = ( ( result >= min ) && ( result <= max ) );
@@ -50,7 +50,7 @@ Deno.test( "test random_integer", async (t) => {
 
   }); // step
   //.................................................
-  await t.step("step : min and max are different numbers, in wrong order", async () => {
+  await t.step("step : min and max are different numbers, in wrong order",  () => {
 
     // when min and max has wrong order
     result = dallmo_util_math.random_integer( max, min );
@@ -59,7 +59,7 @@ Deno.test( "test random_integer", async (t) => {
 
   }); // step
   //.................................................
-  await t.step("step : min and max are the same", async () => {
+  await t.step("step : min and max are the same", () => {
 
     // when min and max are equal
     result = dallmo_util_math.random_integer( min, min );
@@ -78,7 +78,7 @@ Deno.test("test random_sections", async (t) => {
 
   //---------------------------------------------------------------
   // case 1 : 
-  await t.step("step : without config_obj", async () => {
+  await t.step("step : without config_obj", () => {
 
     result_1 = dallmo_util_math.random_sections( input_number );
     result_2 = dallmo_util_array.add_all( result_1 );
@@ -89,7 +89,7 @@ Deno.test("test random_sections", async (t) => {
   }); // step
   //.................................................
   // case 1 : min and max are different numbers in correct order
-  await t.step("step : with config_obj as parameter", async () => {
+  await t.step("step : with config_obj as parameter", () => {
 
     const min: number = 3;
     const max: number = 8;
